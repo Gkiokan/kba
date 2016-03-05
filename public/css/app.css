@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.fix_that_to_zero {
+  padding: 0px;
+  margin: 0px; }
+
+/*
+    Backend Side Menü Styles
+*/
+ul.side_menu {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: block; }
+  ul.side_menu > li {
+    border: 0px solid; }
+    ul.side_menu > li > a {
+      padding: 6px 0px;
+      display: block;
+      line-height: 30px;
+      text-decoration: none !important;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -ms-transition: all .5s;
+      color: #131313;
+      padding-left: 15px; }
+      ul.side_menu > li > a:hover {
+        background: #141414;
+        color: #fff;
+        padding-left: 40px; }
+
+/*# sourceMappingURL=app.css.map */
