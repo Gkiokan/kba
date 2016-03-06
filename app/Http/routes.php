@@ -57,6 +57,11 @@ Route::group(['middleware' => 'web'], function () {
               endforeach;
               echo "<hr>";
           endforeach;
+
+          $b = \App\Business::all();
+          foreach($b as $a):
+                echo "$a->name // $a->user->name <br>";
+              endforeach;
     });
 
     // Create some Dummy data.
