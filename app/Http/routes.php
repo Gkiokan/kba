@@ -23,8 +23,8 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => ['web', 'admin']], function () {
+    Route::get('/admin', function(){ echo "Admin Area"; });
 });
 
 Route::group(['middleware' => 'web'], function () {
@@ -40,6 +40,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/myProfile', ['uses'=> 'Backend@myProfile', 'as'=>'myProfile']);
     Route::get('/myService', ['uses'=> 'Backend@myService', 'as'=>'myService']);
     Route::get('/myCalendar', ['uses'=> 'Backend@myCalendar', 'as'=>'myCalendar']);
-    Route::get('/myBusiness', ['uses'=> 'Backend@myBusiness', 'as'=>'myBusiness']);
+    Route::match(['get', 'post'], '/myBusiness', ['uses'=> 'Backend@myBusiness', 'as'=>'myBusiness']);
     Route::get('/myLocation', ['uses'=> 'Backend@myLocation', 'as'=>'myLocation']);
+
+
 });

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
-      @include('layouts.header.default')
-  </head>
+    @include('layouts.header.default')
 </head>
 <body id="app-layout">
     @include('layouts.menu.app_menu')
 
     <div class='container'>
+      @include('layouts.partials.alerts')
+
       <div class='row'>
           <div class='col-xs-12'>
               <div class='header_title'><h2> @yield('header_title') <small></small></h2></div>

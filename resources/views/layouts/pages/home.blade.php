@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('header_title')
-Dashboard
-@stop
+@section('header_title', 'Dashboard')
 
 @section('content')
             <div class="panel panel-default">

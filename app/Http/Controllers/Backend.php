@@ -62,9 +62,12 @@ class Backend extends Controller
     /*
         List all Business Locations and stuff
     */
-    public function myBusiness(){
-        echo "Business";
+    public function myBusiness(Request $r){
+
+
+        return view('layouts.pages.myBusiness', ['data'=> $r]);
     }
+
 
     /*
         Define Method for Location Magic.
