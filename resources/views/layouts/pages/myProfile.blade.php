@@ -30,6 +30,7 @@
   >> Due the Development are all features deactivated:
   [x] Edit User Data
   [x] Logs
+  [x] Something Magical.
               </pre>
             </form>
       </div>

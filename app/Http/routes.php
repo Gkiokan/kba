@@ -43,6 +43,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::match(['get', 'post'], '/myBusiness', ['uses'=> 'Backend@myBusiness', 'as'=>'myBusiness']);
     Route::get('/myLocation', ['uses'=> 'Backend@myLocation', 'as'=>'myLocation']);
 
+    Route::resource('myService', 'ServiceController');
 
     // Prototyping
     Route::get('magic', function(){
@@ -67,10 +68,10 @@ Route::group(['middleware' => 'web'], function () {
     // Create some Dummy data.
     Route::get('magic/create', function(){
           \App\Business::firstOrCreate(array(
-              'user_id'=>1, 'name'=> 'iDH Magic',
-              'adress'=>'Magic Street 24', 'plz'=>80939, 'city'=>'Munich',
-              'tel'=>'666 6666 666', 'fax'=>'111 998', 'mobil'=>'1987 9983',
-              'email'=>'support@magic.com', 'info_email'=>'info@magic.com'
+              'user_id'=>1, 'name'=> 'Keyvan frisör 2016',
+              'adress'=>'keyvan Street 24', 'plz'=>80939, 'city'=>'Munich',
+              'tel'=>'123 6666 666', 'fax'=>'111 998', 'mobil'=>'1987 9983',
+              'email'=>'support@kba.com', 'info_email'=>'info@magic.com'
           ));
 
           echo "some magic should been happpen";

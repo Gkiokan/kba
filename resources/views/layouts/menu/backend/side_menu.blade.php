@@ -5,9 +5,15 @@
 
         <ul class='side_menu'>
           <li><a href="{{ url('/myProfile') }}"> myProfile </a> </li>
-          <li><a href="{{ url('/myService') }}"> myService </a> </li>
+          <li><a href="{{ url('/myService') }}"> myService </a>
+            <ul class='sub-menu'>
+                <li><a href="{{ url('/myService/create') }}">Create a Service</a></li>
+            </ul>
+          </li>
           <li><a href="{{ url('/myCalendar') }}"> myCalendar </a> </li>
           <li><a href="{{ url('/myBusiness') }}"> myBusiness </a> </li>
-          <li><a href="{{ url('/myLocation') }}"> myLocation </a> </li>        </ul>
+          <li><a href="{{ url('/myLocation') }}"> myLocation </a> </li>
+
+        </ul>
     </div>
 </div>
