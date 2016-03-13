@@ -12,7 +12,11 @@
           </li>
           <li><a href="{{ url('/myCalendar') }}"> myCalendar </a> </li>
           <li><a href="{{ url('/myBusiness') }}"> myBusiness </a> </li>
-          <li><a href="{{ url('/myLocation') }}"> myLocation </a> </li>
+          <li><a href="{{ URL::route('location.index') }}"> myLocation </a>
+            <ul class='sub-menu'>
+                <li><a href="{{ URL::route('location.create') }}">Create a Location</a></li>
+            </ul>
+          </li>
 
         </ul>
     </div>

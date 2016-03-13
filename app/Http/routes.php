@@ -41,9 +41,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/myService', ['uses'=> 'Backend@myService', 'as'=>'myService']);
     Route::get('/myCalendar', ['uses'=> 'Backend@myCalendar', 'as'=>'myCalendar']);
     Route::match(['get', 'post'], '/myBusiness', ['uses'=> 'Backend@myBusiness', 'as'=>'myBusiness']);
-    Route::get('/myLocation', ['uses'=> 'Backend@myLocation', 'as'=>'myLocation']);
+    // Route::get('/myLocation', ['uses'=> 'Backend@myLocation', 'as'=>'myLocation']);
+    // Route::resource('myService', 'ServiceController');
 
-    Route::resource('myService', 'ServiceController');
+    Route::resource('location', 'LocationController');
 
     // Prototyping
     Route::get('magic', function(){

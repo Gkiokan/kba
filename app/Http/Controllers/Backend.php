@@ -41,7 +41,7 @@ class Backend extends Controller
     public function myProfile(Request $r){
         $s = $r->session()->all();
 
-        return view('layouts.pages.myProfile', ['magic'=>$s]);
+        return view('layouts.backend.profile.index', ['magic'=>$s]);
     }
 
 
@@ -49,7 +49,8 @@ class Backend extends Controller
         Services over all..,
     */
     public function myService(){
-        return view('layouts.pages.myService');
+
+        return view('layouts.backend.service.index');
     }
 
     /*
@@ -65,7 +66,7 @@ class Backend extends Controller
     public function myBusiness(Request $r){
 
 
-        return view('layouts.pages.myBusiness', ['data'=> $r]);
+        return view('layouts.backend.business.index', ['data'=> $r]);
     }
 
 

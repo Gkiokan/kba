@@ -24,6 +24,6 @@ class AddForeignKeysToBusiness extends Migration
      */
     public function down()
     {
-        //
+        $table->dropForeign('user_id');
     }
 }
