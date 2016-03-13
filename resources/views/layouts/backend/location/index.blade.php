@@ -7,18 +7,33 @@
       <div class="panel-heading">User Location Information</div>
 
       <div class="panel-body">
-            {!! Form::open(array('route'=>'location.store')) !!}
-
-                {{ Form::label('title', 'Title') }}
-                {{ Form::text('title', null, ['class'=>'form-control']) }}
-                <br>
-                {{ Form::label('description', 'Description') }}
-                {{ Form::textarea('description', null, ['class'=>'form-control']) }}
-
-                <br><br>
-                {{ Form::submit('Create new Location', ['class'=>'btn btn-info']) }}
-
-            {!! Form::close() !!}
+            <div class='locations_wrapper'>
+            @foreach($locations as $location)
+                <div class='row location'>
+                    <div class='col-xs-4'>
+                        <b>{{ $location->title }}</b> <br>
+                        {{ $location->description }}
+                    </div>
+                    <div class='col-xs-4'>
+                        {{ $location->adress }} <br>
+                        {{ $location->plz }} {{ $location->city }} <br>
+                    </div>
+                    <div class='col-xs-4'>
+                        Tel: {{ $location->tel }} <br>
+                        Fax: {{ $location->fax }} <br>
+                        E-Mail: {{ $location->email }} <br>
+                        <br>
+                        <br>
+                        Open Times: <br>
+                        {{ $location->times }}
+                        <br>
+                        <br>
+                        Map: <br>
+                        {{ $location->map }}
+                    </div>
+                </div>
+            @endforeach
+            </div>
       </div>
   </div>
 

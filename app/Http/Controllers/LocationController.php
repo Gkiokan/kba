@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\StoreLocationRequest;
+use App\Location;
 
 class LocationController extends Controller
 {
@@ -15,8 +17,9 @@ class LocationController extends Controller
      */
     public function index()
     {
+        $locations = Location::all();
 
-        return view('layouts.backend.location.index');
+        return view('layouts.backend.location.index', ['locations'=>$locations]);
     }
 
     /**
@@ -26,6 +29,7 @@ class LocationController extends Controller
      */
     public function create()
     {
+
         return view('layouts.backend.location.create');
     }
 
@@ -35,9 +39,27 @@ class LocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreLocationRequest $request)
     {
-        //
+        $location = new Location();
+
+        $location->title        = $request->title;
+        $location->description  = $request->description;
+
+        $location->adress       = $request->adress;
+        $location->plz          = $request->plz;
+        $location->city         = $request->city;
+
+        $location->tel          = $request->tel;
+        $location->fax          = $request->fax;
+        $location->email        = $request->email;
+
+        $location->times        = $request->times;
+        $location->map          = $request->map;
+
+        $location->save();
+
+        return redirect()->route('location.show', $location->id);
     }
 
     /**
@@ -48,7 +70,9 @@ class LocationController extends Controller
      */
     public function show($id)
     {
-        //
+        echo $id . "<br>";
+        echo \Auth::id();
+        return view('layouts.backend.location.index');
     }
 
     /**
